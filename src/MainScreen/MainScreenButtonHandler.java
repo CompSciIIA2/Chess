@@ -105,9 +105,12 @@ public class MainScreenButtonHandler implements ActionListener, MouseListener {
              jfc.setFileFilter(pgnFilter);
                     int fileC = jfc.showOpenDialog(null);
                     
-                    if (fileC == JFileChooser.APPROVE_OPTION) {
+                    if (fileC == JFileChooser.APPROVE_OPTION && jfc.getSelectedFile() != null) {
                         File filePath = jfc.getSelectedFile();
-                        JOptionPane.showMessageDialog(null, "you chose " + filePath.getPath());
+                     MainFrame.getMainFrame().getContentPane().removeAll() ;
+                     MainFrame.getMainFrame().getContentPane().repaint() ;
+                     MainFrame.getMainFrame().add(new AnalyzeScreenBackground(MainFrame.getBgImage())) ;
+                     MainFrame.getMainFrame().getContentPane().revalidate(); 
                    
                     }
                     break;
