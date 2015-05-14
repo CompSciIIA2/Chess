@@ -80,7 +80,7 @@ public class MainScreenButtonHandler implements ActionListener, MouseListener {
      
 
 
-       String comp[] = {"LOAD PNG FILE","MANUAL INPUT"};
+       String comp[] = {"LOAD PGN FILE","MANUAL INPUT"};
         int result = JOptionPane.showOptionDialog(MainFrame.getMainFrame(), "Select Input Method:", "Check Mate Popup", JOptionPane.YES_NO_OPTION,
                 JOptionPane.PLAIN_MESSAGE, null, comp,comp);
          switch (result) {
@@ -95,6 +95,7 @@ public class MainScreenButtonHandler implements ActionListener, MouseListener {
                     }
                     break;
                 case JOptionPane.NO_OPTION:
+                   JOptionPane.showMessageDialog(null, "Coming soon...");
                     break;
          }
 
