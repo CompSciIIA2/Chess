@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 
 /**
  *
- * @author S355569
+ * @author Rashad
  */
 public interface Piece {
     

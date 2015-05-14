@@ -12,7 +12,7 @@ import javax.imageio.ImageIO;
 
 /**
  *
- * @author S355569
+ * @author Rashad
  */
 public class King implements Piece {
     
@@ -22,6 +22,7 @@ public class King implements Piece {
     
     public King(String color) {
         this.color = color;
+        //Sets the color of the piece depending on the input from the constructor
         try{
             switch (color) {
                 case "BLACK":

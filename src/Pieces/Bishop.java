@@ -12,7 +12,7 @@ import javax.imageio.ImageIO;
 
 /**
  *
- * @author S355569
+ * @author Rashad
  */
 public class Bishop implements Piece{
     
@@ -22,7 +22,7 @@ public class Bishop implements Piece{
     
     public Bishop(String color) {
         this.color = color;
-        
+        //Sets the color of the piece depending on the input from the constructor
         try{
             switch (color) {
                 case "BLACK":
