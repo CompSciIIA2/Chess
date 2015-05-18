@@ -8,8 +8,7 @@ import java.awt.event.MouseListener;
 import javax.swing.JButton;
 import AnalyzeScreen.*;
 import java.io.*;
-import javax.swing.ImageIcon;
-import javax.swing.JComponent;
+import javax.swing.filechooser.FileFilter ;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
@@ -86,11 +85,32 @@ public class MainScreenButtonHandler implements ActionListener, MouseListener {
          switch (result) {
              case JOptionPane.YES_OPTION:
                     JFileChooser jfc = new JFileChooser();
+                    FileFilter pgnFilter = new FileFilter(){
 
+            @Override
+            public boolean accept(File f) {
+           
+                
+            return f.toString().endsWith(".pgn") || f.isDirectory() ;
+            }
+
+            @Override
+            public String getDescription() {
+             return ".PGN" ;
+            }
+             
+             
+             
+             } ;
+             jfc.setFileFilter(pgnFilter);
                     int fileC = jfc.showOpenDialog(null);
-                    if (fileC == JFileChooser.APPROVE_OPTION) {
+                    
+                    if (fileC == JFileChooser.APPROVE_OPTION && jfc.getSelectedFile() != null) {
                         File filePath = jfc.getSelectedFile();
-                        JOptionPane.showMessageDialog(null, "you chose " + filePath.getPath());
+                     MainFrame.getMainFrame().getContentPane().removeAll() ;
+                     MainFrame.getMainFrame().getContentPane().repaint() ;
+                     MainFrame.getMainFrame().add(new AnalyzeScreenBackground(MainFrame.getBgImage())) ;
+                     MainFrame.getMainFrame().getContentPane().revalidate(); 
                    
                     }
                     break;
@@ -100,6 +120,8 @@ public class MainScreenButtonHandler implements ActionListener, MouseListener {
          }
 
     }
+
+
 
   
 
