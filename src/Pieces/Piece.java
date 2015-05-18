@@ -5,10 +5,18 @@
  */
 package Pieces;
 
+import java.awt.image.BufferedImage;
+
 /**
  *
- * @author S355569
+ * @author Rashad
  */
 public interface Piece {
+    
+    public String getColor();
+    
+    public String getSymbol();
+    
+    public BufferedImage getImage();
     
 }
