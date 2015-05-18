@@ -16,9 +16,11 @@ import javax.imageio.ImageIO;
  */
 public class Knight implements Piece{
     
+    private static final int value = 3;
     private String color;
     private String symbol = "N";
     private BufferedImage image;
+    private String position;
     
     public Knight(String color){
         this.color = color;
@@ -49,5 +51,9 @@ public class Knight implements Piece{
     
     public BufferedImage getImage() {
         return image;
+    }
+    
+    public int getValue() {
+        return value;
     }
 }

@@ -16,9 +16,11 @@ import javax.imageio.ImageIO;
  */
 public class Pawn implements Piece{
     
+    private static final int value = 1;
     private String color;
     private String symbol = "";
     private BufferedImage image;
+    private String position;
     
     public Pawn(String color) {
         this.color = color;
@@ -49,5 +51,9 @@ public class Pawn implements Piece{
     
     public BufferedImage getImage() {
         return image;
+    }
+    
+    public int getValue() {
+        return value;
     }
 }

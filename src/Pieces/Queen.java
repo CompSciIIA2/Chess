@@ -16,9 +16,11 @@ import javax.imageio.ImageIO;
  */
 public class Queen implements Piece {
     
+    private static final int value = 9;
     private String color;
     private String symbol = "Q";
     private BufferedImage image;
+    private String position;
     
     public Queen(String color) {
         this.color = color;
@@ -48,5 +50,9 @@ public class Queen implements Piece {
     
     public BufferedImage getImage() {
         return image;
+    }
+    
+    public int getValue() {
+        return value;
     }
 }

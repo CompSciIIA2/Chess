@@ -16,9 +16,11 @@ import javax.imageio.ImageIO;
  */
 public class Rook implements Piece {
     
+    private static final int value = 5;
     private String color;
     private String symbol = "R";
     private BufferedImage image;
+    private String position;
     
     public Rook(String color) {
         this.color = color;
@@ -48,5 +50,9 @@ public class Rook implements Piece {
     
     public BufferedImage getImage() {
         return image;
+    }
+    
+    public int getValue() {
+        return value;
     }
 }

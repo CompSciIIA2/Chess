@@ -16,9 +16,11 @@ import javax.imageio.ImageIO;
  */
 public class Bishop implements Piece{
     
+    private static final int value = 3;
     private String color;
     private String symbol = "B";
     private BufferedImage image;
+    private String position;
     
     public Bishop(String color) {
         this.color = color;
@@ -48,5 +50,9 @@ public class Bishop implements Piece{
     
     public BufferedImage getImage() {
         return image;
+    }
+    
+    public int getValue() {
+        return value;
     }
 }

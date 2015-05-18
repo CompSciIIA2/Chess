@@ -16,9 +16,11 @@ import javax.imageio.ImageIO;
  */
 public class King implements Piece {
     
-    private String color;
+    private static final int value = 1000;
     private String symbol = "K";
+    private String color;
     private BufferedImage image;
+    private String position;
     
     public King(String color) {
         this.color = color;
@@ -49,5 +51,9 @@ public class King implements Piece {
     
     public BufferedImage getImage() {
         return image;
+    }
+    
+    public int getValue() {
+        return value;
     }
 }
