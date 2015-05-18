@@ -19,4 +19,10 @@ public interface Piece {
     
     public BufferedImage getImage();
     
+    public int getValue();
+    
+    public String getPosition();
+    
+    public void setPosition(String position);
+    
 }
