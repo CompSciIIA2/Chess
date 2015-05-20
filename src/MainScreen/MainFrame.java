@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
@@ -26,6 +27,7 @@ import javax.swing.UnsupportedLookAndFeelException;
 public class MainFrame extends JFrame {
 
     private static Image bg;
+    private static ImageIcon popupIcon;
     private static MainFrame m;
     private static MainScreenBackground backgroundPan;
     public static boolean testing = false;
@@ -34,7 +36,7 @@ public class MainFrame extends JFrame {
     public MainFrame(String title) {
         super(title);
         loadTitleScreen();
-
+        loadIcon() ;
     }
 
     public void loadTitleScreen() {
@@ -48,12 +50,12 @@ public class MainFrame extends JFrame {
 
         backgroundPan = new MainScreenBackground(bg);
         add(backgroundPan, BorderLayout.CENTER);
-     
+
         setResizable(false);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        
+
         if (testing) {
             setUndecorated(false);
         } else {
@@ -71,8 +73,8 @@ public class MainFrame extends JFrame {
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
-SwingUtilities.updateComponentTreeUI(this);
-pack();
+        SwingUtilities.updateComponentTreeUI(this);
+        pack();
 
     }
 
@@ -95,11 +97,30 @@ pack();
         return bg;
 
     }
+    public static ImageIcon getPopupIcon()
+    {
+        return popupIcon ;
+    }
 
     public static void main(String[] arg) {
         m = new MainFrame("Check Mate");
         m.setVisible(true);
 
     }
+
+    private void loadIcon() {
+       Image i1 = null ;
+        try{
+     i1 = ImageIO.read(new File("img\\king-icon.png")) ;
+        }catch(IOException ioe){
+            System.out.println("DOES NOT EXIST") ;          
+        }
+   Image i2 ;
+   i2 = i1.getScaledInstance(50, 50, Image.SCALE_DEFAULT) ;
+   
+     popupIcon = new ImageIcon(i2) ;
+    }
+   
+    
 
 }

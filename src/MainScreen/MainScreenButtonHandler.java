@@ -81,7 +81,7 @@ public class MainScreenButtonHandler implements ActionListener, MouseListener {
 
        String comp[] = {"LOAD PGN FILE","MANUAL INPUT"};
         int result = JOptionPane.showOptionDialog(MainFrame.getMainFrame(), "Select Input Method:", "Check Mate Popup", JOptionPane.YES_NO_OPTION,
-                JOptionPane.PLAIN_MESSAGE, null, comp,comp);
+                JOptionPane.PLAIN_MESSAGE, MainFrame.getPopupIcon(), comp,comp);
          switch (result) {
              case JOptionPane.YES_OPTION:
                     JFileChooser jfc = new JFileChooser();
