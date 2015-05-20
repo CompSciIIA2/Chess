@@ -22,7 +22,7 @@ import javax.swing.JOptionPane;
  * @author Jacob
  */
 public class MainScreenButtonHandler implements ActionListener, MouseListener {
-
+public File pgnFile ;
     // handles the behavior of each button
     @Override
     public void actionPerformed(ActionEvent ae) {
@@ -106,7 +106,7 @@ public class MainScreenButtonHandler implements ActionListener, MouseListener {
                     int fileC = jfc.showOpenDialog(null);
                     
                     if (fileC == JFileChooser.APPROVE_OPTION && jfc.getSelectedFile() != null) {
-                        File filePath = jfc.getSelectedFile();
+                        pgnFile = jfc.getSelectedFile();
                      MainFrame.getMainFrame().getContentPane().removeAll() ;
                      MainFrame.getMainFrame().getContentPane().repaint() ;
                      MainFrame.getMainFrame().add(new AnalyzeScreenBackground(MainFrame.getBgImage())) ;
