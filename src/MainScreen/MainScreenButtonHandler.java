@@ -34,10 +34,7 @@ public File pgnFile ;
                 break;
             case "ANALYZE GAME":
                 startAnalyzer();
-//                MainFrame.getMainFrame().getContentPane().removeAll();
-//                MainFrame.getMainFrame().repaint() ;
-//                MainFrame.getMainFrame().add(asb1 );
-//                 MainFrame.getMainFrame().revalidate() ;
+
 
                 break;
             case "EXIT":
@@ -75,7 +72,7 @@ public File pgnFile ;
     }
 
     private void startAnalyzer() {
-        AnalyzeScreenBackground asb1 = new AnalyzeScreenBackground(MainFrame.getBgImage());
+      
      
 
 
@@ -107,11 +104,13 @@ public File pgnFile ;
                     
                     if (fileC == JFileChooser.APPROVE_OPTION && jfc.getSelectedFile() != null) {
                         pgnFile = jfc.getSelectedFile();
-                     MainFrame.getMainFrame().getContentPane().removeAll() ;
-                     MainFrame.getMainFrame().getContentPane().repaint() ;
-                     MainFrame.getMainFrame().add(new AnalyzeScreenBackground(MainFrame.getBgImage())) ;
-                     MainFrame.getMainFrame().getContentPane().revalidate(); 
-                   
+//                    
+            MainFrame.getBackgroundPanel().removeAll(); 
+             MainFrame.getContents().getComponent(0).revalidate();
+             MainFrame.getContents().getComponent(0).repaint() ;
+          MainFrame.getBackgroundPanel().setLayout(new BorderLayout());
+          MainFrame.getBackgroundPanel().add(new AnalyzeScreenBackground(MainFrame.getBgImage()));
+
                     }
                     break;
                 case JOptionPane.NO_OPTION:
