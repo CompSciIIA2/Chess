@@ -1,6 +1,7 @@
 package MainScreen;
 
 import java.awt.BorderLayout;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
@@ -64,6 +65,8 @@ public class MainFrame extends JFrame {
         // sets Look and Feel to mimic the System UI
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                    javax.swing.UIManager.put("ScrollBar.thumb", new javax.swing.plaf.ColorUIResource(33,129,176));
+javax.swing.UIManager.put("Button.foreground", new javax.swing.plaf.ColorUIResource(0,0,0));
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MainFrame.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
@@ -102,7 +105,15 @@ public class MainFrame extends JFrame {
         return popupIcon ;
     }
 
+    public static Container getContents()
+    {
+    return getMainFrame().getContentPane() ;
+    
+    
+    }
+
     public static void main(String[] arg) {
+
         m = new MainFrame("Check Mate");
         m.setVisible(true);
 
