@@ -1,67 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pieces;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import javax.imageio.ImageIO;
+import java.awt.Graphics2D;
+import java.awt.Image;
 
-/**
- *
- * @author Rashad
- */
-public class King implements Piece {
-    
-    private static final int value = 1000;
-    private String symbol = "K";
-    private String color;
-    private BufferedImage image;
-    private String position;
-    
-    public King(String color) {
-        this.color = color;
-        //Sets the color of the piece depending on the input from the constructor
-        try{
-            switch (color) {
-                case "BLACK":
-                    image = ImageIO.read(new File("img\\chess_pieces\\king_black.png"));
-                    break;
-                case "WHITE":
-                    image = ImageIO.read(new File("img\\chess_pieces\\king_white.png"));
-                    break;
-            }
-        }
-        catch(IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    
-    public String getColor() {
-        return color;
-    }
-    
-    public String getSymbol() {
-        return symbol;
-    }
-    
-    public BufferedImage getImage() {
-        return image;
-    }
-    
-    public int getValue() {
-        return value;
-    }
-    
-    public String getPosition() {
-        return position;
-    }
-    
-    public void setPosition(String position) {
-        this.position = position;
-    }
+import javax.swing.ImageIcon;
+
+public class King extends Piece{
+	
+	private static int value = 1;
+	private static String name = "King";
+	private static String notation = "K";
+	private String image;
+	
+	public King(String color, int x, int y) {
+		super(value, name, color, notation, x, y);
+		
+		image = "/images/pieces/fantasy/png/"+getColor()+"p";
+		super.setImage(image);
+		
+	}
+	
 }
