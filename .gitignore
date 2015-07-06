@@ -1,5 +1,11 @@
+#netbeans files
 /nbproject/
 /build/
 /dist/
 build.xml
 manifest.mf
+#eclipse files
+.classpath
+.project
+/bin
+.settings
