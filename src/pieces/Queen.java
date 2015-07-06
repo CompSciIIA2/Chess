@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Pieces;
+package pieces;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -14,31 +14,30 @@ import javax.imageio.ImageIO;
  *
  * @author Rashad
  */
-public class Knight implements Piece{
+public class Queen implements Piece {
     
-    private static final int value = 3;
+    private static final int value = 9;
     private String color;
-    private String symbol = "N";
+    private String symbol = "Q";
     private BufferedImage image;
     private String position;
     
-    public Knight(String color){
+    public Queen(String color) {
         this.color = color;
         //Sets the color of the piece depending on the input from the constructor
         try{
             switch (color) {
                 case "BLACK":
-                    image = ImageIO.read(new File("img\\chess_pieces\\knight_black.png"));
+                    image = ImageIO.read(new File("img\\chess_pieces\\queen_black.png"));
                     break;
                 case "WHITE":
-                    image = ImageIO.read(new File("img\\chess_pieces\\knight_white.png"));
+                    image = ImageIO.read(new File("img\\chess_pieces\\queen_white.png"));
                     break;
             }
         }
         catch(IOException e) {
             e.printStackTrace();
         }
-        
     }
     
     public String getColor() {
